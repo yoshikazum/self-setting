@@ -1,0 +1,74 @@
+RIABLEN
+# =======================================================
+nethack               on
+autodetach            on              # Standard: on
+crlf                  off             # Standard: off
+deflogin              off             # Standard: on
+hardcopy_append       on              # Standard: off
+startup_message       off             # Standard: on
+vbell                 on
+defscrollback         1000            # Standard: 100
+silencewait           15              # Standard: 30
+shell                 zsh
+activity              "activity in %n (%t) [%w:%s]~"
+bell                  "%C -> %n%f %t activity!"
+vbell_msg             " *Fuck this bell ;-)* "
+
+# =====================================================
+# miyoshi Config
+# =====================================================
+log                     on
+
+# ======================================================
+# Keybindings
+# ======================================================
+bind h hardcopy
+bind P paste          .
+bind ~ activity       "activity in %n (%t) [%w:%s]~"
+bind * activity       "activity in %n (%t) [%w:%s]"
+bind f screen -t 'f-451.net'           0 ssh         t2501-nico@f-451.net
+bind m screen -t 'muttng'    1 muttng
+bind G screen -t 'Google'  8 elinks http://www.google.de
+bind s screen -t 'su'      3 sudo su
+bind g screen -t 'gatekeeper' 2 ssh -l nicogo      blngho.ath.cx
+bind t screen -t 'tower' 2 ssh nion@192.168.1.1
+bind H screen -t 'Links' 5 elinks
+bind v screen -t 'vim'     4 vim
+bind p screen -t 'htop'     0 htop
+bind b screen -t 'battery' 0 yacpi
+bind i screen -t 'centericq' 7 centericq
+bind u screen -t 'slrn' 9 slrn
+bind n screen -t 'news' 4 snownews
+bind N screen -t 'note' note -i
+ 
+#   ===============================================================
+# TERMCAP and TERMINFO
+#  ===============================================================
+  
+   
+#  termcapinfo xterm     ti@:te@
+#
+# Matthias Kopfermann <matthias_kopfermann@gmx.de>   [020222]:
+# make the cursor show up in red:
+    termcapinfo xterm "ve=\E[?25h\E[?17;0;64c"
+
+      termcapinfo linux "ve=\E[?25h\E[?17;0;64c"
+#termcapinfo  xterm    Z0=\E[?3h:Z1=\E[?3l:is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l
+       
+#  ===========================================
+#       CAPTION
+# ===========================================
+
+# einstellbare erschrift der Screenleiste
+
+caption always "%{rw}%n%f %t %{wk} | %?%-Lw%?%{wb}[%n*%f  %t]%?(%u)%?%{wk}%?%+Lw%? %{wk}"
+
+
+# ===========================================
+#       HARDSTATUS
+# ===========================================
+
+hardstatus alwayslastline "%{+b kr}host: %{kw}%H %{kg} |  %c | %{ky}%d.%m.%Y | %{kr}(load: %l)%-0=%{kw}"
+
+
+#sorendition    kG # black  on bold green
